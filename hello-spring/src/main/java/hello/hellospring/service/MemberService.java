@@ -12,8 +12,15 @@ import java.util.Optional;
  */
 public class MemberService {
 
-    private final MemberRepository memberRepository
-            = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    /*
+    memberRepository 를 외부에서 넣어준다.
+    - Dependency Injection 의존 주입(DI)
+     */
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
