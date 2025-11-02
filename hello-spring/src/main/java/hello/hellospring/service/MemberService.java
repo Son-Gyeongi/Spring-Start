@@ -12,16 +12,10 @@ import java.util.Optional;
 /**
  * 비즈니스 로직
  */
-@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    /*
-    memberRepository 를 외부에서 넣어준다.
-    - Dependency Injection 의존 주입(DI)
-     */
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
