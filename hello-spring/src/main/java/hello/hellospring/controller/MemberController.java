@@ -18,6 +18,7 @@ public class MemberController {
     @Autowired // 스프링 컨테이너에서 찾아서 주입 (의존관계 주입 Dependency Injection)
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass());
     }
 
     @GetMapping("/members/new")

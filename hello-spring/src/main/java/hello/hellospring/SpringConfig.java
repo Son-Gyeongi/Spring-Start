@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -46,6 +47,13 @@ public class SpringConfig {
         // memberService에 의존관계 세팅
         return new MemberService(memberRepository);
     }
+
+/*
+    @Bean // spring Bean에 직접 등록
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
+*/
 
 /*
     @Bean
